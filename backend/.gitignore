@@ -1,5 +1,5 @@
 node_modules
 .env
 .vercel
-.index.js
-.vercel.json
+./index.js
+./vercel.json
