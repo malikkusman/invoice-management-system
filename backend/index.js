@@ -19,8 +19,8 @@ dotenv.config();
 // Initialize express app
 const app = express();
 const PORT = 5000;
-const DB_URL = "mongodb+srv://42khan0:Z4f0m2f5NWNwbfO0@mymongodb.8qowb.mongodb.net/?retryWrites=true&w=majority&appName=mymongodb";
-if (!DB_URL) {
+const DB = process.env.DB_URL;
+if (!DB) {
     console.error('DB_URL is not defined. Set the environment variable.');
     process.exit(1); // Exit if the DB URL is not provided
 }
@@ -93,7 +93,7 @@ app.get('/fetch-pdf', (req, res) => {
 
 // Root route for server status
 app.get('/', (req, res) => {
-    res.send('SERVER IS RUNNING');
+    res.sendFile(path.join(__dirname, 'public', 'server.html'));
 });
 
 // MongoDB connection and server start

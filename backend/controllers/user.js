@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const dotenv = require('dotenv');
 
 dotenv.config();
-const SECRET = "expertbcomputercoursesacademy55050";
+const SECRET = process.env.SECRET;
 const HOST =  process.env.SMTP_HOST;
 const PORT =  process.env.SMTP_PORT;
 const USER =  process.env.SMTP_USER;
