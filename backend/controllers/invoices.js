@@ -72,7 +72,7 @@ const deleteInvoice = async (req, res) => {
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No invoice with that id');
 
-    await InvoiceModel.findByIdAndRemove(id);
+    await InvoiceModel.findByIdAndDelete(id);
     res.json({ message: 'Invoice deleted successfully' });
 };
 

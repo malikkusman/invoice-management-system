@@ -92,7 +92,7 @@ const deleteProfile = async (req, res) => {
 
   if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No profile with id: ${id}`);
 
-  await ProfileModel.findByIdAndRemove(id);
+  await ProfileModel.findByIdAndDelete(id);
   res.json({ message: "Profile deleted successfully." });
 };
 

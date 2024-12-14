@@ -55,7 +55,7 @@ const deleteClient = async (req, res) => {
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No Client with that id');
 
-    await ClientModel.findByIdAndRemove(id);
+    await ClientModel.findByIdAndDelete(id);
     res.json({ message: 'Client deleted successfully' });
 };
 

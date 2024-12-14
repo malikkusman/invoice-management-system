@@ -19,7 +19,7 @@ dotenv.config();
 // Initialize express app
 const app = express();
 const PORT = 5000;
-const DB = process.env.DB_URL;
+const DB = "mongodb+srv://42khan0:Z4f0m2f5NWNwbfO0@mymongodb.8qowb.mongodb.net/?retryWrites=true&w=majority&appName=mymongodb";
 if (!DB) {
     console.error('DB_URL is not defined. Set the environment variable.');
     process.exit(1); // Exit if the DB URL is not provided
@@ -97,7 +97,7 @@ app.get('/', (req, res) => {
 });
 
 // MongoDB connection and server start
-mongoose.connect(DB_URL)
+mongoose.connect(DB)
     .then(() => {
         console.log('Connected to MongoDB');
         app.listen(PORT, () => {
